@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="分治法,排序," />
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="Android程序员一枚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="算法思想：分治法实际问题：全排列问题编写语言：Java">
+<meta name="keywords" content="分治法,排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速排序">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/快速排序/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="Android程序员一枚">
+<meta property="og:description" content="算法思想：分治法实际问题：全排列问题编写语言：Java">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/分治法-全排列问题.jpg">
+<meta property="og:updated_time" content="2018-08-13T05:38:17.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人博客">
-<meta name="twitter:description" content="Android程序员一枚">
+<meta name="twitter:title" content="快速排序">
+<meta name="twitter:description" content="算法思想：分治法实际问题：全排列问题编写语言：Java">
+<meta name="twitter:image" content="http://yoursite.com/images/分治法-全排列问题.jpg">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/快速排序/"/>
 
 
 
 
 
-  <title>个人博客</title>
+  <title>快速排序 | 个人博客</title>
   
 
 
@@ -143,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,9 +284,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -313,9 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/13/快速排序/" itemprop="url">快速排序</a></h1>
+          <h1 class="post-title" itemprop="name headline">快速排序</h1>
         
 
         <div class="post-meta">
@@ -387,16 +388,11 @@
       
 
       
-        
-          <h6 id="算法思想：分治法"><a href="#算法思想：分治法" class="headerlink" title="算法思想：分治法"></a>算法思想：分治法</h6><h6 id="实际问题：全排列问题"><a href="#实际问题：全排列问题" class="headerlink" title="实际问题：全排列问题"></a>实际问题：全排列问题</h6><h6 id="编写语言：Java"><a href="#编写语言：Java" class="headerlink" title="编写语言：Java"></a>编写语言：Java</h6><hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/13/快速排序/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h6 id="算法思想：分治法"><a href="#算法思想：分治法" class="headerlink" title="算法思想：分治法"></a>算法思想：分治法</h6><h6 id="实际问题：全排列问题"><a href="#实际问题：全排列问题" class="headerlink" title="实际问题：全排列问题"></a>实际问题：全排列问题</h6><h6 id="编写语言：Java"><a href="#编写语言：Java" class="headerlink" title="编写语言：Java"></a>编写语言：Java</h6><hr>
+<a id="more"></a>
+<p>问题描述：显示 列表list(a, b, c, d……) 的全排列，显示的条目数为：n!<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">//下面的例子将以 A B C 为例</span><br><span class="line"> public class ArrayProblem</span><br><span class="line"> &#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        char[] list = new char[]&#123;&apos;A&apos;, &apos;B&apos;, &apos;C&apos;&#125;;</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;序列(A, B, C)的全排列为：\n&quot;);</span><br><span class="line">        array(list);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //全排列的产生函数</span><br><span class="line">    public static void array(char[] list)</span><br><span class="line">    &#123;</span><br><span class="line">        array(list, 0, list.length);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //产生 start 到 end 的全排列</span><br><span class="line">    public static void array(char[] list, int start, int end)</span><br><span class="line">    &#123;</span><br><span class="line">        if(start == end)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int i = 0; i &lt; end; i++)</span><br><span class="line">                System.out.print(list[i] + &quot; &quot;);</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            for(int i = start; i &lt; end; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                //交换 list[start] 和 list[i] 的位置(例：i = 1 时，start = 0，交换 A B 的位置，</span><br><span class="line">                //此时为 B A C)</span><br><span class="line">                char temp = list[i];</span><br><span class="line">                list[i] = list[start];</span><br><span class="line">                list[start] = temp;</span><br><span class="line">                </span><br><span class="line">                //第一个交换位置后，产生剩下的全排列序列(第一个为 B，产生 A C 的全排列)</span><br><span class="line">                array(list, start + 1, end);</span><br><span class="line">                </span><br><span class="line">                //将一个有序序列全排列后，恢复原状，防止出现重复的结果(会出现两个完全相同的序列，</span><br><span class="line">                //即一次排列输出两次, 有兴趣可以注释掉下面三行代码，运行观察效果，然后分析原因)</span><br><span class="line">                temp = list[i];</span><br><span class="line">                list[i] = list[start];</span><br><span class="line">                list[start] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果如下：<br><img src="/images/分治法-全排列问题.jpg" alt="结果示例"></p>
+
       
     </div>
     
@@ -411,14 +407,22 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/分治法/" rel="tag"># 分治法</a>
+          
+            <a href="/tags/排序/" rel="tag"># 排序</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -428,10 +432,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -439,6 +444,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -459,8 +468,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,6 +565,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#算法思想：分治法"><span class="nav-text">算法思想：分治法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#实际问题：全排列问题"><span class="nav-text">实际问题：全排列问题</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#编写语言：Java"><span class="nav-text">编写语言：Java</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -676,6 +710,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
