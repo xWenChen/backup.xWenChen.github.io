@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="动态规划," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="Android程序员一枚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://www.wersong.cn/categories/index.html">
+<meta name="description" content="算法思想：动态规划实际问题：硬币问题编写语言：Java">
+<meta name="keywords" content="动态规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态规划-硬币问题">
+<meta property="og:url" content="http://www.wersong.cn/算法/动态规划-硬币问题/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="Android程序员一枚">
+<meta property="og:description" content="算法思想：动态规划实际问题：硬币问题编写语言：Java">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-13T09:13:10.257Z">
+<meta property="og:image" content="http://www.wersong.cn/images/动态规划-硬币问题.jpg">
+<meta property="og:updated_time" content="2018-09-29T02:18:27.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="Android程序员一枚">
+<meta name="twitter:title" content="动态规划-硬币问题">
+<meta name="twitter:description" content="算法思想：动态规划实际问题：硬币问题编写语言：Java">
+<meta name="twitter:image" content="http://www.wersong.cn/images/动态规划-硬币问题.jpg">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.wersong.cn/categories/"/>
+  <link rel="canonical" href="http://www.wersong.cn/算法/动态规划-硬币问题/"/>
 
 
 
 
 
-  <title>分类 | 个人博客</title>
+  <title>动态规划-硬币问题 | 个人博客</title>
   
 
 
@@ -284,40 +287,186 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.wersong.cn/算法/动态规划-硬币问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wersong Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/onepiece.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 1 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">18</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">动态规划-硬币问题</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-29T09:57:57+08:00">
+                2018-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p><strong>算法思想：动态规划</strong><br><strong>实际问题：硬币问题</strong><br><strong>编写语言：Java</strong></p>
+<hr>
+<a id="more"></a>
+<h6 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h6><p>假设有 1 元，3 元，5 元的硬币若干（无限），现在需要凑出 n 元。问如何组合才能使硬币的数量最少？</p>
+<h6 id="关键特征"><a href="#关键特征" class="headerlink" title="关键特征"></a>关键特征</h6><p>要推出问题的关键特征与递归关系，必要的例子是少不了的。</p>
+<p>我们先假设一个函数 d(i) 来表示需要凑出 i 的总价值需要的最少硬币数量，那么：</p>
+<ol>
+<li>当 i = 0 时，很显然我们可以知道 d(0) = 0。因为不要凑钱了嘛，当然也不需要任何硬币了。注意这是很重要的一步，其后所有的结果都从这一步延伸开来。</li>
+<li>当 i = 1 时，因为我们有 1 元的硬币，所以直接在第 1 步的基础上，加上 1 个 1 元硬币，得出 d(1) = 1。</li>
+<li>当 i = 2 时，因为我们并没有 2 元的硬币，所以只能拿 1 元的硬币来凑。在第 2 步的基础上，加上 1 个 1 元硬币，得出 d(2) = 2。</li>
+<li>当 i = 3 时，我们可以在第 3 步的基础上加上 1 个 1 元硬币，得到 3 这个结果。但其实我们有 3 元硬币，所以这一步的最优结果不是建立在第 3 步的结果上得来的，而是应该建立在第 1 步上，加上 1 个 3 元硬币，得到 d(3) = 1。</li>
+<li>接着就不再举例了，推导过程和上面一样。</li>
+</ol>
+<h6 id="递归结构"><a href="#递归结构" class="headerlink" title="递归结构"></a>递归结构</h6><p>我们来分析一下上述过程。可以看出，除了第 1 步这个看似基本的公理外，其他往后的结果都是建立在它之前得到的某一步的最优解上，加上 1 个硬币得到。即：d(i) = d(j) + 1，此处 j &lt; i，但是在上述例子中我们发现 i = 3 时，有两个解，但我们选择了第二个解，即：<strong> d(i) = min(d(j) + 1) </strong></p>
+<p>有了结构，思路就清晰了，代码写起来也就很方便了。</p>
+<h6 id="Java代码"><a href="#Java代码" class="headerlink" title="Java代码"></a>Java代码</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下例子中 n 的数值取 11</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CoinProblem</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] coins = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>&#125;; <span class="comment">//硬币的面值</span></span><br><span class="line">        <span class="keyword">int</span> money = <span class="number">11</span>; <span class="comment">//待求取的目标数额</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] result = getLeastCoins(coins, money);</span><br><span class="line">        </span><br><span class="line">        System.out.print(<span class="string">"硬币的面值为："</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; coins.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.print(coins[i] + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">"要凑齐数额 "</span> + i + <span class="string">" 最少需要 "</span> </span><br><span class="line">                + result[i] + <span class="string">" 个硬币"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">      * param coins 存储硬币面值的数组</span></span><br><span class="line"><span class="comment">      * param money 待求取的目标数额</span></span><br><span class="line"><span class="comment">      * return result 存储各个数额所需最少硬币的数组</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getLeastCoins(<span class="keyword">int</span>[] coins, <span class="keyword">int</span> money)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[money + <span class="number">1</span>];</span><br><span class="line">        result[<span class="number">0</span>] = <span class="number">0</span>; <span class="comment">//数额0只需0个便可凑齐</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; result.length; i++)</span><br><span class="line">            result[i] = <span class="number">10000</span>; <span class="comment">//初始化时各个数额需要最大上限个硬币</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= money; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> coin : coins)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(coin &lt;= i)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> min = <span class="number">10000</span>; <span class="comment">//存储中间结果的变量，初始化为最大硬币上限</span></span><br><span class="line">                    min = result[i - coin] + <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">if</span>(result[i] &gt; min)</span><br><span class="line">                        result[i] = min;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h6><p><img src="/images/动态规划-硬币问题.jpg" alt="结果示例"></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/算法/动态规划-矩阵连乘/" rel="next" title="动态规划-矩阵连乘">
+                <i class="fa fa-chevron-left"></i> 动态规划-矩阵连乘
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/算法/动态规划-最大子段和/" rel="prev" title="动态规划-最大子段和">
+                动态规划-最大子段和 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -350,8 +499,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -438,6 +596,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#问题描述"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键特征"><span class="nav-text">关键特征</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#递归结构"><span class="nav-text">递归结构</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Java代码"><span class="nav-text">Java代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果"><span class="nav-text">运行结果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
