@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/onebig.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/onemedium.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/onesmall.jpg?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="注解,Android,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="本文主要讲解 Android 开发常用的注解">
+<meta name="keywords" content="注解,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 注解">
+<meta property="og:url" content="xWenChen.github.io/Android/Android 注解/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="本文主要讲解 Android 开发常用的注解">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-01-18T16:07:13.682Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 注解">
+<meta name="twitter:description" content="本文主要讲解 Android 开发常用的注解">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="xWenChen.github.io/Android/Android 注解/">
+
+
+
+
+
+  <title>Android 注解 | 个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">做人做事做学问，尽心尽力尽责任。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="xWenChen.github.io/Android/Android 注解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WellCherish">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/onepiece.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android 注解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-27T21:18:00+08:00">
+                2020-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>本文主要讲解 Android 开发常用的注解</strong></p>
+<hr>
+<a id="more"></a>
+<h1 id="介绍"><a class="header-anchor" href="#介绍">¶</a>介绍</h1>
+<p>注解可以理解成一个标签，是给类、方法、变量、属性等加标签。注解（Annotation） 为我们在代码中添加信息提供了一种形式化的方法，是我们可以在稍后 某个时刻方便地使用这些数据（通过 解析注解 来使用这些数据），常见的作用有以下几种：</p>
+<ol>
+<li>提供信息给编译器： 编译器可以利用注解来探测错误和警告信息</li>
+<li>编译阶段时的处理： 软件工具可以用来利用注解信息来生成代码、Html文档或者做其它相应处理</li>
+<li>运行时的处理： 某些注解可以在程序运行的时候接受代码的提取</li>
+</ol>
+<h1 id="元注解"><a class="header-anchor" href="#元注解">¶</a>元注解</h1>
+<p>『元注解』是用于修饰注解的注解，通常用在注解的定义上，例如：</p>
+<p>JAVA 中有以下几个『元注解』：</p>
+<ul>
+<li>@Target：注解的作用目标</li>
+<li>@Retention：注解的生命周期</li>
+<li>@Documented：注解是否应当被包含在 JavaDoc 文档中</li>
+<li>@Inherited：是否允许子类继承该注解</li>
+</ul>
+<h2 id="target"><a class="header-anchor" href="#target">¶</a>@Target</h2>
+<p>@Target 注解指明了注解的使用范围。其包含一个 ElementType 数组类型的属性字段，属性名是 value。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.ANNOTATION_TYPE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Target &#123;</span><br><span class="line">    ElementType[] value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ElementType 是一个枚举类型，其包含以下一些值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> ElementType &#123;</span><br><span class="line">    <span class="comment">// 被修饰的注解可以作用在类、接口(包括注解类型)、或者枚举上</span></span><br><span class="line">    TYPE,</span><br><span class="line">    <span class="comment">// 被修饰的注解可以作用在属性上</span></span><br><span class="line">    FIELD,</span><br><span class="line">    <span class="comment">// 被修饰的注解可以作用在方法上</span></span><br><span class="line">    METHOD,</span><br><span class="line">    <span class="comment">// 被修饰的注解可以作用在参数上</span></span><br><span class="line">    PARAMETER,</span><br><span class="line">    <span class="comment">// 被修饰的注解可以作用在构造器上</span></span><br><span class="line">    CONSTRUCTOR,</span><br><span class="line">    <span class="comment">// 被修饰的注解可以作用在本地局部变量上</span></span><br><span class="line">    LOCAL_VARIABLE,</span><br><span class="line">    <span class="comment">// 被修饰的注解可以作用在注解上</span></span><br><span class="line">    ANNOTATION_TYPE,</span><br><span class="line">    <span class="comment">// 被修饰的注解可以作用在包上</span></span><br><span class="line">    PACKAGE,</span><br><span class="line">    <span class="comment">// 1.8新增类型，被修饰的注解可以作用在泛型上</span></span><br><span class="line">    TYPE_PARAMETER,</span><br><span class="line">    <span class="comment">// 1.8新增类型，被修饰的注解可以作用在任何类型上    </span></span><br><span class="line">    TYPE_USE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="retention"><a class="header-anchor" href="#retention">¶</a>@Retention</h2>
+<p>Retention 的英文意为保留期的意思。当 @Retention 应用到一个注解上的时候，它解释说明了这个注解的的存活时间。</p>
+<p>Retention 包含一个 RetentionPolicy 数组类型的属性字段，属性名是 value。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.ANNOTATION_TYPE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Retention &#123;</span><br><span class="line">    <span class="function">RetentionPolicy <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>RetentionPolicy 意为保留策略，是一个枚举类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> RetentionPolicy &#123;</span><br><span class="line">    <span class="comment">// 注解只在源码阶段保留，在编译器进行编译时它将被丢弃忽视。</span></span><br><span class="line">    SOURCE,</span><br><span class="line">    <span class="comment">// 注解只被保留到编译进行的时候，它并不会被加载到 JVM 中</span></span><br><span class="line">    CLASS,</span><br><span class="line">    <span class="comment">// 注解可以保留到程序运行的时候，它会被加载进入到 JVM 中，所以在程序运行时可以获取到它们</span></span><br><span class="line">    RUNTIME</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="documented"><a class="header-anchor" href="#documented">¶</a>@Documented</h2>
+<p>顾名思义，@Documented 是和文档有关。被它标记的元素会被 Javadoc 工具处理，作用是能够将注解中的元素包含到 Javadoc 中去。</p>
+<h2 id="inherited"><a class="header-anchor" href="#inherited">¶</a>@Inherited</h2>
+<p>Inherited 是继承的意思，其表明了注解的继承关系，子类可以继承父类的注解声明。</p>
+<p>如果一个类 1 被 @Inherited 注解过，那么用注解 A 去标记类 1，类 2 继承自类 1。不管类 2 有没有注解 A，类 2 都有 A 的注解，其继承自类 1。</p>
+<h2 id="repeatable"><a class="header-anchor" href="#repeatable">¶</a>@Repeatable</h2>
+<p>Repeatable 是可重复的意思。@Repeatable 是 Java 1.8 才加进来的，所以算是一个新的特性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.ANNOTATION_TYPE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Repeatable &#123;</span><br><span class="line">    <span class="comment">// 包含一组相同类型的值</span></span><br><span class="line">    Class&lt;? extends Annotation&gt; value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面的代码可以看出，@Repeatable 注解使用了泛型，其值是注解的 Class 类型，属性名是 value。</p>
+<p>该注解的用法可以参考<a href="https://blog.csdn.net/ljcgit/article/details/81708679" target="_blank" rel="noopener">这篇博文</a>，此处就不介绍了，还是很简单的.</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta"># 注解的属性</span></span><br><span class="line"></span><br><span class="line">从上面的代码中，我们知道注解的定义是使用 @interface。其实所有的注解都隐式继承自 Annotation 这个接口。所以我们见到的所有注解的属性，严格意义上讲并不是属性，而是方法。想想接口的方法是怎么定义的？</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 接口的方法定义，加括号</span></span><br><span class="line">    <span class="keyword">String</span> say();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> @<span class="class"><span class="keyword">interface</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 注解的属性定义，加括号</span></span><br><span class="line">    <span class="keyword">String</span> say();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两者的定义方式是不是出奇的一致！！！所以，注解的属性，念做属性，实为方法。因此，<strong>注解中的属性定义时，一定要加上括号。</strong></p>
+<h1 id="java-内置注解"><a class="header-anchor" href="#java-内置注解">¶</a>Java 内置注解</h1>
+<p>Java 的内置注解，相信我们大家都不陌生。包括 @Deprecated，@Override，@SuppressWarnings，@SafeVarargs，@FunctionalInterface。</p>
+<h2 id="deprecated"><a class="header-anchor" href="#deprecated">¶</a>@Deprecated</h2>
+<p>这个元素是用来标记过时的元素，编译器在编译阶段遇到这个注解时会发出提醒警告，告诉开发者正在调用一个过时的元素比如过时的方法、过时的类、过时的成员变量。比较鲜明的特征是，被这个注解标记的元素会被打上删除线。</p>
+<h2 id="override"><a class="header-anchor" href="#override">¶</a>@Override</h2>
+<p>这个元素提示子类要复写父类中被 @Override 修饰的方法。表明子类中被这个注解标记的方法均来自父类。该注解只可作用于方法。</p>
+<h2 id="suppresswarnings"><a class="header-anchor" href="#suppresswarnings">¶</a>@SuppressWarnings</h2>
+<p>这个注解用来抑制编译器的警告。之前说过调用被 @Deprecated 注解的方法后，编译器会警告提醒。而有时候开发者会忽略这种警告，他们可以在调用的地方通过 @SuppressWarnings 达到目的。</p>
+<p>该注解的使用原理：Java 1.5 为 Java 增加了注解。使用时可以为 “javac” 指令增加 -Xlint 参数来控制是否报告这些警告（如@Deprecated）。默认情况下，Sun 编译器<strong>以简单的两行的形式输出警告。通过添加 -Xlint:keyword 标记（例如 -Xlint:finally），您可以获得关键字类型错误的完整说明。通过在关键字前面添加一个破折号，写为 -Xlint:-keyword，您可以取消警告。（-Xlint 支持的关键字的完整列表可以在 javac 文档页面上找到。）</strong></p>
+<p>下面是使用到的关键字的详细说明：</p>
+<ul>
+<li>deprecation：使用了不赞成使用的类或方法时的警告</li>
+<li>unchecked：执行了未检查的转换时的警告，例如使用集合时没有指定泛型类型</li>
+<li>fallthrough：当 Switch 程序块直接通往下一种情况而**没有 Break **时的警告</li>
+<li>path：在类路径、源文件路径等中有不存在的路径时的警告</li>
+<li>serial：当在可序列化的类上缺少 serialVersionUID 定义时的警告</li>
+<li>finally：任何 finally 子句不能正常完成时的警告</li>
+<li>all：关于以上所有情况的警告</li>
+</ul>
+<p>基于上面的描述，下面是一个使用例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">D1</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Deprecated</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">D2</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 忽略废弃元素的警告，value中的可指定值在上面列举出来了</span></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(value=&#123;<span class="string">"deprecation"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       D1.foo();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="safevarargs"><a class="header-anchor" href="#safevarargs">¶</a>@SafeVarargs</h2>
+<p>参数安全类型注解。它的目的是提醒开发者不要用参数做一些不安全的操作。它的存在会阻止编译器产生 unchecked 这样的警告。它是在 Java 1.7 的版本中加入的。</p>
+<p>具体的例子此处我就不讲了，可以看看<a href="https://blog.csdn.net/lastsweetop/article/details/82863417" target="_blank" rel="noopener">这片博文</a></p>
+<h2 id="functionalinterface"><a class="header-anchor" href="#functionalinterface">¶</a>@FunctionalInterface</h2>
+<p>函数式接口注解，这个是 Java 1.8 版本引入的新特性。函数式编程很火，所以 Java 8 也及时添加了这个特性。函数式接口可以很容易转换为 Lambda 表达式。</p>
+<h1 id="android-注解"><a class="header-anchor" href="#android-注解">¶</a>Android 注解</h1>
+<p>Android 平台提供了部分注解供我们使用，在使用之前，需要导入相关的包，语句如下：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:support-annotations:VERSION_NUM'</span></span><br></pre></td></tr></table></figure>
+<p>此包提供的注解如下：</p>
+<h2 id="intdef-和-stringdef"><a class="header-anchor" href="#intdef-和-stringdef">¶</a>IntDef 和 StringDef</h2>
+<p>IntDef 和 StringDef 是 Android 提供的两个魔法变量注解，用于取代 enum 和 魔法数字(字符串)等，其有一个数组类型的 value 属性。</p>
+<p>假设我们需要定义消息类型，包括语音、文本、表情、图片、视频等，这些消息类型用整数定义。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Msg</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> msgType;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们并不希望出现其他数字的消息类型，即需要限定类型的范围。此时就有几种方法：</p>
+<ul>
+<li>在使用处加上注释，这并不是什么好方法，不建议采用</li>
+<li>使用枚举类型代替整型，这种方法是可行的，但是在低端机上可以会存在内存占用大的情况。其使用方法如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Msg</span> </span>&#123;</span><br><span class="line">    MsgType msgType;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> MsgType &#123;</span><br><span class="line">    TEXT, VOICE, PHOTO, VIDEO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三种方法便是使用注解，可以使用 IntDef 注解。其使用方法如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、定义消息类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MsgType</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TEXT = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VOICE = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PHOTO = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VIDEO = <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2、自定义注解，指定取值范围，后续增加的消息类型都需要在这里加入</span></span><br><span class="line"><span class="comment">// IntDef 有一个属性 value 是一个 int 类型的数组</span></span><br><span class="line"><span class="meta">@IntDef</span>(value = &#123;MsgType.TEXT, MsgType.VOICE, MsgType.PHOTO, MsgType.VIDEO&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> AMsgType &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 3、使用注解</span></span><br><span class="line"><span class="comment">// 这样就指定了取值范围</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="meta">@AMsgType</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> msgType;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就这么简单，StringDef 的用法也差不多。不过需要注意的是，IntDef 注解还有个 boolean 类型的 flag 的属性，默认情况下，IntDef 的所有取值会被当作 enum （枚举类型）处理，而如果设置了 flag = true，那么 IntDef 中设置的取值范围就会被当作 flag （标志位）处理，标志位可以进行位运算。</p>
+<p>另外，有一个 IntRange 注解和 IntDef 注解类似，前者可以指定取值范围，包括 from 和 to 两个属性，取值区间是连续的。而后者的取值范围更自由，可以不是连续的取值范围。</p>
+<h2 id="threading-注解"><a class="header-anchor" href="#threading-注解">¶</a>Threading 注解</h2>
+<p><strong>Thread注解是帮助我们设置方法的执行线程</strong>，如果和指定的线程不一致，抛出异常。Threading 注解类型：</p>
+<ul>
+<li>@UiThread：UI线程</li>
+<li>@MainThread：主线程</li>
+<li>@WorkerThread：工作线程（子线程）</li>
+<li>@BinderThread：绑定线程</li>
+</ul>
+<h2 id="取值限制范围注解"><a class="header-anchor" href="#取值限制范围注解">¶</a>取值限制范围注解</h2>
+<p>Android 提供了集中取值的范围限制注解供我们使用，其中就包括上面我们提到的 @IntRange 和 @FloatRange 注解，另外还包括一个 @Size 注解。常用的就这三个：</p>
+<ul>
+<li>@Size</li>
+<li>@IntRange</li>
+<li>@FloatRange</li>
+</ul>
+<p>@Size 使用 min、max，而后两者使用 from、to。@Size 用于定义尺寸，其源码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(SOURCE)</span><br><span class="line"><span class="meta">@Target</span>(&#123;PARAMETER,LOCAL_VARIABLE,METHOD,FIELD&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Size &#123;</span><br><span class="line">    <span class="comment">// 尺寸的默认值</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;</span><br><span class="line">    <span class="comment">// 尺寸 n 的取值范围：min &lt;= n &lt;= max</span></span><br><span class="line">    <span class="comment">// 可取的最小值</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">min</span><span class="params">()</span> <span class="keyword">default</span> Long.MIN_VALUE</span>;</span><br><span class="line">    <span class="comment">//　可取的最大值</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">max</span><span class="params">()</span> <span class="keyword">default</span> Long.MAX_VALUE</span>;</span><br><span class="line">    <span class="comment">// 尺寸的缩放倍数</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">multiple</span><span class="params">()</span> <span class="keyword">default</span> 1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="callsuper-注解"><a class="header-anchor" href="#callsuper-注解">¶</a>@CallSuper 注解</h2>
+<p>@CallSuper 注解主要是用来提示子类在覆盖父类的方法时，需要调用对应的super.***方法。下面的代码是个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">F</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 提示子类在重写父类的 init 方法时，需要加上 super.init 语句</span></span><br><span class="line">    <span class="meta">@CallSuper</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span>  <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">T</span> <span class="keyword">extends</span> <span class="title">F</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 此处不加入这句，编译器会报错</span></span><br><span class="line">        <span class="keyword">super</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="checkresult-注解"><a class="header-anchor" href="#checkresult-注解">¶</a>@CheckResult 注解</h2>
+<p>此注解主要是提示我们使用到方法定义的返回值。该注解有一个 suggest 的字符串类型的属性，允许我们加上一些提醒，来告诉方法调用者为什么要使用此方法的返回值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@CheckResult</span>(suggest = <span class="string">"这是注解的说明，请使用返回值!!!"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 这种调用方式会报错</span></span><br><span class="line">    getInt();</span><br><span class="line">    <span class="comment">// 这种调用方法是正确的</span></span><br><span class="line">    <span class="keyword">int</span> result = getInt();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外，注解也可以通过反射获取到。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/注解/" rel="tag"># 注解</a>
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/算法/回溯法-符号三角形问题/" rel="next" title="回溯法-符号三角形问题">
+                <i class="fa fa-chevron-left"></i> 回溯法-符号三角形问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/onepiece.jpg" alt="WellCherish">
+            
+              <p class="site-author-name" itemprop="name">WellCherish</p>
+              <p class="site-description motion-element" itemprop="description">Android 程序员一枚</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xWenChen" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhangvc@foxmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-text">¶介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元注解"><span class="nav-text">¶元注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#target"><span class="nav-text">¶@Target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#retention"><span class="nav-text">¶@Retention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#documented"><span class="nav-text">¶@Documented</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inherited"><span class="nav-text">¶@Inherited</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeatable"><span class="nav-text">¶@Repeatable</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java-内置注解"><span class="nav-text">¶Java 内置注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#deprecated"><span class="nav-text">¶@Deprecated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#override"><span class="nav-text">¶@Override</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#suppresswarnings"><span class="nav-text">¶@SuppressWarnings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#safevarargs"><span class="nav-text">¶@SafeVarargs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#functionalinterface"><span class="nav-text">¶@FunctionalInterface</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android-注解"><span class="nav-text">¶Android 注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#intdef-和-stringdef"><span class="nav-text">¶IntDef 和 StringDef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#threading-注解"><span class="nav-text">¶Threading 注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取值限制范围注解"><span class="nav-text">¶取值限制范围注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#callsuper-注解"><span class="nav-text">¶@CallSuper 注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#checkresult-注解"><span class="nav-text">¶@CheckResult 注解</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WellCherish</span>
+
+  
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
