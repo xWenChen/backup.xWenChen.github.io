@@ -22,7 +22,7 @@ hexo 在新电脑下的环境搭建
 
 2、安装hexo：npm install -g hexo-cli。
 
-3、clone远程仓库到本地 git clone git@github.com:username/username.github.io.git。
+3、clone远程仓库到本地 git clone https://github.com/xWenChen/xWenChen.github.io.git
 
 4、根据packge.json安装依赖npm install。
 
