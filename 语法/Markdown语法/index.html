@@ -371,6 +371,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  16k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  52 mins.
+                </span>
+              
+            </div>
+          
 
           
 
@@ -395,12 +426,12 @@
 <h2 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h2>
 <p>在想要设置为标题的文字前面加 # 来表示，# 和文字之间需要空格隔开。</p>
 <p>一个 # 是一级标题，二个 # 是二级标题，以此类推。最多支持六级标题。</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br><span class="line"></span><br><span class="line">注意：符号与内容之间有空格。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br><span class="line"></span><br><span class="line">注意：符号与内容之间有空格。</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p><img src="/images/%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95%E7%9A%84%E6%BC%94%E7%A4%BA.png" alt="六个标题样式"></p>
 <h2 id="字体"><a class="header-anchor" href="#字体">¶</a>字体</h2>
 <p>要加粗的文字左右分别用两个 * 号包起来，要倾斜的文字左右分别用一个 * 号包起来，要倾斜和加粗的文字左右分别用三个 * 号包起来，要加删除线的文字左右分别用两个 ~ 号包起来。</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*<span class="strong">*这是加粗的字体*</span><span class="strong">*</span></span><br><span class="line"><span class="strong">*</span>这是倾斜的字体<span class="strong">*</span></span><br><span class="line"><span class="strong">*</span>*<span class="strong">*这是加粗+倾斜的字体*</span>*<span class="strong">*</span></span><br><span class="line"><span class="strong">~~这是加了删除线的字体~~</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">注意：符号与内容之间无空格。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**这是加粗的字体**</span><br><span class="line">*这是倾斜的字体*</span><br><span class="line">***这是加粗+倾斜的字体***</span><br><span class="line">~~这是加了删除线的字体~~</span><br><span class="line"></span><br><span class="line">注意：符号与内容之间无空格。</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p><strong>这是加粗的字体</strong></p>
 <p><em>这是倾斜的字体</em></p>
@@ -408,7 +439,7 @@
 <p><s>这是加了删除线的字体</s></p>
 <h2 id="分割线"><a class="header-anchor" href="#分割线">¶</a>分割线</h2>
 <p>三个或者三个以上的 - 或者 * 都可以。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="bullet">-</span><span class="meta">---</span></span><br><span class="line"><span class="string">***</span></span><br><span class="line"><span class="string">*****</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <hr>
 <hr>
@@ -416,7 +447,7 @@
 <hr>
 <h2 id="引用"><a class="header-anchor" href="#引用">¶</a>引用</h2>
 <p>在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;，直到 n 个，可以无限加下去。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是引用的内容 <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>这是引用的内容 <span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt;&gt;这是引用的内容 <span class="number">3</span></span><br><span class="line"></span><br><span class="line">注意：符号与内容之间无空格。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是引用的内容 1</span><br><span class="line">&gt;&gt;这是引用的内容 2</span><br><span class="line">&gt;&gt;&gt;&gt;这是引用的内容 3</span><br><span class="line"></span><br><span class="line">注意：符号与内容之间无空格。</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <blockquote>
 <p>这是引用的内容 1</p>
@@ -436,17 +467,17 @@
 </blockquote>
 </blockquote>
 <h2 id="图片"><a class="header-anchor" href="#图片">¶</a>图片</h2>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">	!<span class="selector-attr">[图片 alt]</span>(图片地址 <span class="string">''</span>图片 title <span class="string">''</span>)</span><br><span class="line">说明：</span><br><span class="line">	图片 <span class="selector-tag">alt</span> 就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">	图片 <span class="selector-tag">title</span> 是图片的标题，当鼠标移到图片上时显示的内容。<span class="selector-tag">title</span> 可加可不加。</span><br><span class="line">	图片地址与图片标题之间有个空格，前者不加双引号，后者要加双引号。</span><br><span class="line">举例：</span><br><span class="line">	!<span class="selector-attr">[最小生成树]</span>(/images/prim/最小生成树.png <span class="string">"原始连通图"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">	![图片 alt](图片地址 &apos;&apos;图片 title &apos;&apos;)</span><br><span class="line">说明：</span><br><span class="line">	图片 alt 就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">	图片 title 是图片的标题，当鼠标移到图片上时显示的内容。title 可加可不加。</span><br><span class="line">	图片地址与图片标题之间有个空格，前者不加双引号，后者要加双引号。</span><br><span class="line">举例：</span><br><span class="line">	![最小生成树](/images/prim/最小生成树.png &quot;原始连通图&quot;)</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p><img src="/images/prim/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91.png" alt="最小生成树" title="原始连通图"></p>
 <h2 id="超链接"><a class="header-anchor" href="#超链接">¶</a>超链接</h2>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">	<span class="selector-attr">[超链接名]</span>(链接地址 <span class="string">''</span>链接 title <span class="string">''</span>)</span><br><span class="line">说明：</span><br><span class="line">	链接 <span class="selector-tag">title</span> 是超链接的标题，当鼠标移到超链接上时显示的内容。<span class="selector-tag">title</span> 可加可不加。</span><br><span class="line">	链接地址与链接标题之间有个空格，前者不加双引号，后者要加双引号。</span><br><span class="line">举例：</span><br><span class="line">	<span class="selector-attr">[访问百度]</span>(<span class="attribute">https</span>:<span class="comment">//www.baidu.com "跳转百度主页")</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">	[超链接名](链接地址 &apos;&apos;链接 title &apos;&apos;)</span><br><span class="line">说明：</span><br><span class="line">	链接 title 是超链接的标题，当鼠标移到超链接上时显示的内容。title 可加可不加。</span><br><span class="line">	链接地址与链接标题之间有个空格，前者不加双引号，后者要加双引号。</span><br><span class="line">举例：</span><br><span class="line">	[访问百度](https://www.baidu.com &quot;跳转百度主页&quot;)</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p><a href="https://www.baidu.com" title="跳转百度主页" target="_blank" rel="noopener">访问百度</a></p>
 <h2 id="列表"><a class="header-anchor" href="#列表">¶</a>列表</h2>
 <p><strong>无序列表</strong></p>
 <p>无序列表用 - + * 任何一种都可以。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>无序列表 1</span><br><span class="line"><span class="bullet">+ </span>无序列表 2</span><br><span class="line"><span class="bullet">* </span>无序列表 3</span><br><span class="line"></span><br><span class="line">注意：符号与内容之间要有空格，列表之间不空行。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 无序列表 1</span><br><span class="line">+ 无序列表 2</span><br><span class="line">* 无序列表 3</span><br><span class="line"></span><br><span class="line">注意：符号与内容之间要有空格，列表之间不空行。</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <ul>
 <li>无序列表 1</li>
@@ -459,7 +490,7 @@
 </ul>
 <p><strong>有序列表</strong></p>
 <p>有序列表用数字加点表示。</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 有序列表 <span class="number">1</span></span><br><span class="line"><span class="number">2.</span> 有序列表 <span class="number">2</span></span><br><span class="line"><span class="number">3.</span> 有序列表 <span class="number">3</span></span><br><span class="line"></span><br><span class="line">注意：点号与内容之间要有空格，列表之间不空行。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 有序列表 1</span><br><span class="line">2. 有序列表 2</span><br><span class="line">3. 有序列表 3</span><br><span class="line"></span><br><span class="line">注意：点号与内容之间要有空格，列表之间不空行。</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <ol>
 <li>
@@ -508,7 +539,7 @@
 </li>
 </ol>
 <h2 id="表格"><a class="header-anchor" href="#表格">¶</a>表格</h2>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> 左对齐 </span>|<span class="string"> 居中 </span>|<span class="string"> 右对齐 </span>|</span><br><span class="line">|<span class="string"> :--- </span>|<span class="string"> :---: </span>|<span class="string"> ---: </span>|</span><br><span class="line">|<span class="string"> 内容 </span>|<span class="string"> 内容 </span>|<span class="string"> 内容 </span>|</span><br><span class="line">|<span class="string"> 内容 </span>|<span class="string"> 内容 </span>|<span class="string"> 内容 </span>|</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">	第二行分割表头和内容。</span><br><span class="line">	- 有一个就行，为了对齐，可以多加几个	</span><br><span class="line">	- 左边加 ：表示文字居左</span><br><span class="line">	- 两边加 ：表示文字居中</span><br><span class="line">	- 右边加 ：表示文字居右</span><br><span class="line">	- 两边都不加 : 使用默认格式，文字默认居左</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐 | 居中 | 右对齐 |</span><br><span class="line">| :--- | :---: | ---: |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">	第二行分割表头和内容。</span><br><span class="line">	- 有一个就行，为了对齐，可以多加几个	</span><br><span class="line">	- 左边加 ：表示文字居左</span><br><span class="line">	- 两边加 ：表示文字居中</span><br><span class="line">	- 右边加 ：表示文字居右</span><br><span class="line">	- 两边都不加 : 使用默认格式，文字默认居左</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <table>
 <thead>
@@ -534,12 +565,12 @@
 <h2 id="代码"><a class="header-anchor" href="#代码">¶</a>代码</h2>
 <p><strong>单行代码</strong></p>
 <p>单行代码用两个 ` 包括着即可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`<span class="keyword">int</span> a = <span class="number">2</span>;`</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`int a = 2;`</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p><code>int a = 2;</code></p>
 <p><strong>多行代码</strong></p>
 <p>多行代码用六个 ` 包括着即可，开头的三个符号后还可以指定编程语言的类型，多行代码又叫代码块。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">'```java</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> main(<span class="type">String</span>[] args) &#123;</span><br><span class="line">		<span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"Hello world!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">```'</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&apos;```java</span><br><span class="line">public class A &#123;</span><br><span class="line">	public static main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;Hello world!&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">```&apos;</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello world!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Markdown 代码块中支持的常用高亮语言类型如下：</p>
@@ -734,7 +765,7 @@
 <p><strong>上下标</strong></p>
 <p>上标：采用 <code>&lt;sup&gt;&lt;/sup&gt;</code> 标签。</p>
 <p>下标：采用 <code>&lt;sub&gt;&lt;/sub&gt;</code> 标签。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">H<span class="tag">&lt;<span class="name">sub</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sub</span>&gt;</span>O</span><br><span class="line">2<span class="tag">&lt;<span class="name">sup</span>&gt;</span>4<span class="tag">&lt;/<span class="name">sup</span>&gt;</span> = 16</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">H&lt;sub&gt;2&lt;/sub&gt;O</span><br><span class="line">2&lt;sup&gt;4&lt;/sup&gt; = 16</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p>H<sub>2</sub>O</p>
 <p>2<sup>4</sup> = 16</p>
@@ -860,7 +891,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -871,7 +902,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -882,7 +913,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -368,6 +368,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  25k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1:23
+                </span>
+              
+            </div>
+          
 
           
 
@@ -424,7 +455,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.ANNOTATION_TYPE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Repeatable &#123;</span><br><span class="line">    <span class="comment">// 包含一组相同类型的值</span></span><br><span class="line">    Class&lt;? extends Annotation&gt; value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>从上面的代码可以看出，@Repeatable 注解使用了泛型，其值是注解的 Class 类型，属性名是 value。</p>
 <p>该注解的用法可以参考<a href="https://blog.csdn.net/ljcgit/article/details/81708679" target="_blank" rel="noopener">这篇博文</a>，此处就不介绍了，还是很简单的.</p>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta"># 注解的属性</span></span><br><span class="line"></span><br><span class="line">从上面的代码中，我们知道注解的定义是使用 @interface。其实所有的注解都隐式继承自 Annotation 这个接口。所以我们见到的所有注解的属性，严格意义上讲并不是属性，而是方法。想想接口的方法是怎么定义的？</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 接口的方法定义，加括号</span></span><br><span class="line">    <span class="keyword">String</span> say();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> @<span class="class"><span class="keyword">interface</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 注解的属性定义，加括号</span></span><br><span class="line">    <span class="keyword">String</span> say();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 注解的属性</span><br><span class="line"></span><br><span class="line">从上面的代码中，我们知道注解的定义是使用 @interface。其实所有的注解都隐式继承自 Annotation 这个接口。所以我们见到的所有注解的属性，严格意义上讲并不是属性，而是方法。想想接口的方法是怎么定义的？</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">public interface A &#123;</span><br><span class="line">    // 接口的方法定义，加括号</span><br><span class="line">    String say();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public @interface B &#123;</span><br><span class="line">    // 注解的属性定义，加括号</span><br><span class="line">    String say();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>两者的定义方式是不是出奇的一致！！！所以，注解的属性，念做属性，实为方法。因此，<strong>注解中的属性定义时，一定要加上括号。</strong></p>
 <h1 id="java-内置注解"><a class="header-anchor" href="#java-内置注解">¶</a>Java 内置注解</h1>
 <p>Java 的内置注解，相信我们大家都不陌生。包括 @Deprecated，@Override，@SuppressWarnings，@SafeVarargs，@FunctionalInterface。</p>
@@ -454,7 +485,7 @@
 <p>函数式接口注解，这个是 Java 1.8 版本引入的新特性。函数式编程很火，所以 Java 8 也及时添加了这个特性。函数式接口可以很容易转换为 Lambda 表达式。</p>
 <h1 id="android-注解"><a class="header-anchor" href="#android-注解">¶</a>Android 注解</h1>
 <p>Android 平台提供了部分注解供我们使用，在使用之前，需要导入相关的包，语句如下：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:support-annotations:VERSION_NUM'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &apos;com.android.support:support-annotations:VERSION_NUM&apos;</span><br></pre></td></tr></table></figure>
 <p>此包提供的注解如下：</p>
 <h2 id="intdef-和-stringdef"><a class="header-anchor" href="#intdef-和-stringdef">¶</a>IntDef 和 StringDef</h2>
 <p>IntDef 和 StringDef 是 Android 提供的两个魔法变量注解，用于取代 enum 和 魔法数字(字符串)等，其有一个数组类型的 value 属性。</p>
@@ -538,6 +569,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/Java/Java 枚举/" rel="prev" title="Java 枚举">
+                Java 枚举 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -615,7 +650,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -626,7 +661,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -637,7 +672,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
