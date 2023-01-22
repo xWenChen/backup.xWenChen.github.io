@@ -19,7 +19,9 @@ hexo 在新电脑下的环境搭建
 4、根据packge.json安装依赖npm install。
 5、本地生成网站并开启博客服务器：hexo g & hexo s。
 6、如果一切正常，此时打开浏览器输入http://localhost:4000/已经可以看到博客正常运行了。
-7、最后安装部署插件：npm install hexo-deployer-git --save
+7、最后安装部署插件：npm install hexo-deployer-git --save；安装字数统计插件：npm install hexo-word-counter
+8、先卸载原有的 hexo-renderer-marked 插件：npm un hexo-renderer-marked --save；安装 hexo-renderer-markdown-it 插件：npm i hexo-renderer-markdown-it --save
+
 
 注意：
 1、在新电脑上，得预先添加ssh key（具体百度）
