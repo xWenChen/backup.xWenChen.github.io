@@ -1,4 +1,5 @@
 # ===============================================================
+# ===============================================================
 # ========================= ATTENTION! ==========================
 # ===============================================================
 # NexT repository is moving here: https://github.com/theme-next
@@ -230,8 +231,8 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
+  wordcount: true
+  min2read: true
   totalcount: false
   separated_meta: true
 
