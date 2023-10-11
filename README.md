@@ -1,9 +1,20 @@
 # xWenChen.github.io
+
 WenChen的个人博客存储地址
 
 博客访问地址：https://xwenchen.github.io/
 
-hexo 分支备份了环境文件，是博客内容与配置分支
+老博客管理包为 Hexo，配置文件分支在 hexo
+
+新博客分支为 Hugo，配置文件分支在 Hugo
+
+现在默认使用 Hugo，请使用 Hugo 分支更新
+
+
+hugo 分支备份了 hugo  环境文件，是博客内容与配置分支
+
+hexo 分支备份了 hexo 环境文件，是博客内容与配置分支
+
 master 分支存放静态文件，是博客编译内容的存放分支
 
 每次发布新文章或修改网站样式文件时，git add . & git commit -m "some description" & git push origin hexo   即可把环境文件推送到hexo分支。
