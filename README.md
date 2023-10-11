@@ -17,33 +17,46 @@ hexo 分支备份了 hexo 环境文件，是博客内容与配置分支
 
 master 分支存放静态文件，是博客编译内容的存放分支
 
-每次发布新文章或修改网站样式文件时，git add . & git commit -m "some description" & git push origin hexo   即可把环境文件推送到hexo分支。
-	
-然后再hexo g -d(或者输入 hexo clean & hexo g & hexo d 指令)发布网站并推送静态文件到master分支。
+Hugo 安装官网为：https://gohugo.io/installation/windows/
+
+Hugo 目录含义：
+
+archetypes：存放执行 hugo new content posts/my-first-post.md 命令新建 md 文件时使用的 front matter 文件模版，Front matter 支持 TOML、YAML、JSON 格式
+
+content：存放内容页面，如 Blog
+
+layouts：存放定义网站的样式，写在layouts文件下的样式会覆盖安装的主题中的 layouts 文件同名的样式
+
+static：存放所有静态文件，如图片
+
+data：存放创建站点时 Hugo 使用的其他数据
+
+public：存放 Hugo 生成的静态网页
+
+themes：存放主题文件
+
+config.toml：网站配置文件
 
 --------------------------------------------------------------------------------------------------------------
 
-hexo 在新电脑下的环境搭建
+Hugo 使用流程：
 
-新电脑中的环境搭建
-这部分应该要简单一点，如果你已经搭建过一个hexo博客的话。
+1、先点击网址下载最新的 Hogo 依赖： https://github.com/gohugoio/hugo/releases/latest
 
-1、新电脑上安装node.js (建议 12 版本，高版本会出错)和git。不赘述。
+2、在 Windows 上可以下载 hugo_extended_version_windows-amd64.zip，并解压到电脑上的软件目录
 
-2、clone远程仓库到本地 git clone https://github.com/xWenChen/xWenChen.github.io.git
+3、将 Hugo.exe 所在的目录添加到环境变量中
 
-3、安装hexo：npm install -g hexo-cli
+4、基本安装就完成了，如果需要更强大的功能，可以参考官网安装 Go 等软件
 
-4、根据packge.json安装依赖npm install
+5、创建网站： hugo new site hugo-blog
 
-5、最后安装部署插件：npm install hexo-deployer-git --save
+6、提交 git 命令进行保存，git add . & git commit -m "创建 Hugo 博客" & git push
 
-6、本地生成网站并开启博客服务器：hexo g & hexo s。
+7、进入网址目录：cd hugo-blog
 
-7、如果一切正常，此时打开浏览器输入  http://localhost:4000/    已经可以看到博客正常运行了。
+8、设置主题，并将主题设置为 submodule： git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 
-注意：
+9、启用 ananke 主题，在 hugo.toml 文件末尾新增一行 "theme = 'ananke''"，或者使用命令： echo "theme = 'ananke'" >> hugo.toml
 
-1、在新电脑上，得预先添加ssh key（具体百度）
-
-2、新电脑中博客不显示内容，是因为主题文件夹为空，需要在提交hexo分支环境之前就把其中.git .gitignore 删除掉。或者是git rm -r --cached next，取消对next之前的追踪记录。
+10、启用 Hugo，查看效果： hugo server ，可以在 http://localhost:1313/ 中预览网站
