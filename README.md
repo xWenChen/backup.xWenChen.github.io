@@ -60,3 +60,5 @@ Hugo 使用流程：
 9、启用 ananke 主题，在 hugo.toml 文件末尾新增一行 "theme = 'ananke''"，或者使用命令： echo "theme = 'ananke'" >> hugo.toml
 
 10、启用 Hugo，查看效果： hugo server ，可以在 http://localhost:1313/ 中预览网站
+
+11、新建博文： hugo new content posts/my-first-post.md
